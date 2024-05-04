@@ -1,7 +1,4 @@
 # Install Python and Dependencies for SeqLenPlot.py on Windows, Linux, and MacOS
-[TOCM]
-
-[TOC]
 
 ## Installation Prerequisites:
 
@@ -11,37 +8,35 @@
 
 - biopython
 
-------------
-
 ## Step 1: Install Python
 
 ## Step 1.1: Install Python on Windows
 
-### Go to the official Python website: Python Downloads [https://www.python.org/downloads/](https://www.python.org/downloads/)
+- Go to the official Python website: Python Downloads [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-### Click on the "Downloads" tab.
+- Click on the "Downloads" tab.
 
-### Scroll down to find the latest version of Python for Windows. It's recommended to choose Python version 3.x.
+- Scroll down to find the latest version of Python for Windows. It's recommended to choose Python version 3.x.
 
-### Click on the "Download" button for the latest version of Python 3.x for Windows.
+- Click on the "Download" button for the latest version of Python 3.x for Windows.
 
-### Once the download is complete, double-click the downloaded file to launch the installer.
+- Once the download is complete, double-click the downloaded file to launch the installer.
 
-### In the installer, make sure to check the box that says "Add Python 3.x to PATH".
+- In the installer, make sure to check the box that says "Add Python 3.x to PATH".
 
-### Click "Install Now" to begin the installation process.
+- Click "Install Now" to begin the installation process.
 
-### Wait for the installation to complete. This may take a few minutes.
+- Wait for the installation to complete. This may take a few minutes.
 
-### Verify the installation by opening the command prompt and typing:
+- Verify the installation by opening the command prompt and typing:
 
 `python --version`
 
 ### Step 1.1.2: Install Required Libraries "matplotlib and Biopython" on Windows
 
-Once Python is installed:
+- Once Python is installed:
 
-Open your command prompt by holding "Windows+R" on your keyboard. Then run:
+- Open your command prompt by holding "Windows+R" on your keyboard. Then run:
 
 `cmd`
 
@@ -51,9 +46,9 @@ Open your command prompt by holding "Windows+R" on your keyboard. Then run:
 
 ### Step 1.1.3: Verify Installation on Windows
 
-After installing the packages:
+- After installing the packages:
 
-Run these commands in your command prompt to verify:
+- Run these commands in your command prompt to verify:
 
 `pip install matplotlib`
 
@@ -61,7 +56,7 @@ Run these commands in your command prompt to verify:
 
 ### Step 1.1.4:  Verify Dependencies Installation on Windows
 
-Run these commands in your command prompt to verify dependencies were installed correctly:
+- Run these commands in your command prompt to verify dependencies were installed correctly:
 
 `python -c "import matplotlib"`
 
@@ -69,7 +64,7 @@ Run these commands in your command prompt to verify dependencies were installed 
 
 ### Step 1.1.5: Run the SeqLengthPlot.py script
 
-Change the directory to where you have the SeqLengthPlot.py script and .fasta file.
+- Change the directory to where you have the SeqLengthPlot.py script and .fasta file.
 
 ### Run the script with the following command in your command prompt:
 
@@ -82,8 +77,7 @@ Change the directory to where you have the SeqLengthPlot.py script and .fasta fi
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-Install Python using Homebrew:
+- Install Python using Homebrew:
 
 `brew install python`
 
@@ -95,8 +89,8 @@ Install Python using Homebrew:
   - Download and install Python following the on-screen instructions.
 
 ### 1.2.2: Installing Dependencies on macOS
-Open Terminal.
-Install `matplotlib` and `Biopython` using pip:
+- Open Terminal.
+- Install `matplotlib` and `Biopython` using pip:
 `pip3 install matplotlib biopython`
 
 ### Troubleshooting
@@ -107,8 +101,8 @@ Install `matplotlib` and `Biopython` using pip:
  ```
 
 ## step 1.3: Installing on Linux (Ubuntu/Debian)
-Open the terminal.
-Update the package index:
+- Open the terminal.
+- Update the package index:
 `sudo apt update`
 
 ### 1.3.1: Install Python
@@ -128,13 +122,13 @@ conda install python=3.x
 ```
 
 ### 1.3.2: Install Required Libraries on Linux
-- Using pip:
+Using pip:
 Open Terminal.
 Install `matplotlib` and `Biopython`:
 
 `pip3 install matplotlib biopython`
 
-- Or using conda:
+Or using conda:
 Activate your conda environment:
 
 `conda activate myenv`
@@ -149,9 +143,9 @@ Start the Python interpreter in the terminal:
 `python3`
 
 Import the libraries to check for successful installation. Type:
+
 ```
 import matplotlib
-import Bio```
-
-
+import Bio
+```
 **Note**: For troubleshooting or additional installation options, consider searching online or consulting Python's documentation.
