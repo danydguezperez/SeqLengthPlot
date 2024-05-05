@@ -34,11 +34,11 @@ For detailed instructions and tips on installing Python and dependencies in diff
 
 - Download the SeqLengthPlot.py script from https://github.com/danydguezperez/SeqLengthPlot and place it in a folder containing your input FASTA file. Open the script with a text editor and set the required parameters:
   
-- **Input files**
+**Input files**
 
 The script reads sequences from a specified nucleotide or protein FASTA file, which must be present in the directory where the script is run or provided via an absolute path. As an example, we provide an original nucleotide sample: [Assembly_Ss_SE.Trinity.fasta.zip](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip). Download it and decompress it, in the same path of the SeqLengthPlot.py script.
 
-**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" use as example data, constitutes original single-end transcriptome from broken reads of **Savalia savaglia*, generated in the framework of the DEEPVEN project (characterizing the diversity and activity of venoms of deep-sea Anthozoa).
+**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" use as example data, constitutes original single-end transcriptome from broken reads of [*Savalia savaglia*](https://en.wikipedia.org/wiki/Savalia_savaglia), generated in the framework of the DEEPVEN project (characterizing the diversity and activity of venoms of deep-sea Anthozoa).
 
 **Parameters**
 
