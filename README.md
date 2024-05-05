@@ -4,7 +4,7 @@ An easy-to-use Python-based Tool for Visualizing and Retrieving Sequence Lengths
 ## Authors
 -	Dany Domínguez Pérez (danydguezperez@gmail.com)
 -	Maria Vittoria Modica (mariavittoria.modica@szn.it)
--	Collaborators of the DEEPVEN project (Characterizing the Diversity and Activity of Venoms of deep-sea Anthozoa)
+-	Collaborators of the DEEPVEN project - Characterizing the Diversity and Activity of Venoms of deep-sea Anthozoans
 
 ## SeqLengthPlot.py
 
