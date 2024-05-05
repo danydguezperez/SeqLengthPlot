@@ -38,7 +38,7 @@ For detailed instructions and tips on installing Python and dependencies in diff
 
 The script reads sequences from a specified nucleotide or protein FASTA file, which must be present in the directory where the script is run or provided via an absolute path. As an example, we provide an original nucleotide sample: [Assembly_Ss_SE.Trinity.fasta.zip](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip). Download it and decompress it, in the same path of the SeqLengthPlot.py script.
 
-**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" provided as example data, constitutes original single-end transcriptome from broken reads of [*Savalia savaglia*](https://en.wikipedia.org/wiki/Savalia_savaglia), generated in the framework of the DEEPVEN project.
+**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" provided as an example data, constitutes original single-end transcriptome from broken reads of [*Savalia savaglia*](https://en.wikipedia.org/wiki/Savalia_savaglia), generated in the framework of the DEEPVEN project.
 
 **Parameters**
 
@@ -85,8 +85,8 @@ The script will generate files and plots automatically in a new folder named aft
   
 ## Remarks
 
--	**Comprehensive Metrics and Output**: Unlike seqkit stats, or TrinityStats.pl, SeqLengthPlot offers in a single tool the total number of sequences, minimum, maximum, of the input and splitted files, as well as the resulting FASTA files, containing the corresponding sequences length below and above the cuttoff, 
--	**Visual Analysis**: It generates intuitive plots for sequence length distributions, offering both linear and logarithmic views to accommodate a wide range of sequence lengths, enhancing data interpretation, 
--	**Flexible Threshold Settings**: The tool allows users to set custom length thresholds, crucial for tasks such as validating de novo transcriptome assemblies or analyzing protein-coding regions in ORFs, peptidomics and bioactive peptides biodiscovery which may require different length criteria and 
+-	**Comprehensive Metrics and Output**: Unlike seqkit stats, or TrinityStats.pl, SeqLengthPlot offers in a single tool the total number of sequences, minimum, maximum, of the input and splitted files, as well as the resulting FASTA files, containing the corresponding sequences length below and above the cuttoff.
+-	**Visual Analysis**: It generates intuitive plots for sequence length distributions, offering both linear and logarithmic views to accommodate a wide range of sequence lengths, enhancing data interpretation. 
+-	**Flexible Threshold Settings**: The tool allows users to set custom length thresholds, crucial for tasks such as validating de novo transcriptome assemblies or analyzing protein-coding regions in ORFs, peptidomics and bioactive peptides biodiscovery which may require different length criteria.
 -	**Ease of Integration**: Designed for flexibility, it can be seamlessly run independently as a standalone script, or incorporated into larger bioinformatics workflows, supporting both interactive explorations and automated pipelines.
 
