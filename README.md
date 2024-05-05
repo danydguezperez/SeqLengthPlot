@@ -50,13 +50,16 @@ The script reads sequences from a specified nucleotide or protein FASTA file, wh
 <img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/parameters_1.png width=80%>
 </div>
 
+
 -	**Interactive Plots**: Users can explore interactively the generated plots and save them into differents image formats
 
 <div align="center"> 
 <img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/fig_2.png width=80%>
 </div>
 
+
 -	 **Pipeline integration**: Or instead, comment out the **plt.show()** line to prevent plots from popping up. This is especially useful when integrating the script into automated data processing pipelines where no user interaction is desired. Plots will be saved anyway in the selected output directory.
+
 
 <div align="center">
 <img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/parameters_2.png width=70%>
