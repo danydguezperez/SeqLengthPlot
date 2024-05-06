@@ -4,7 +4,6 @@ An easy-to-use Python-based Tool for Visualizing and Retrieving Sequence Lengths
 ## Authors
 -	Dany Domínguez Pérez (danydguezperez@gmail.com)
 -	Maria Vittoria Modica (mariavittoria.modica@szn.it)
--	Collaborators of the DEEPVEN project - Characterizing the Diversity and Activity of Venoms of deep-sea Anthozoans
 
 ## SeqLengthPlot.py
 
@@ -38,7 +37,7 @@ For detailed instructions and tips on installing Python and dependencies in diff
 
 The script reads sequences from a specified nucleotide or protein FASTA file, which must be present in the directory where the script is run or provided via an absolute path. As an example, we provide an original nucleotide sample: [Assembly_Ss_SE.Trinity.fasta.zip](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip). Download it and decompress it, in the same path of the SeqLengthPlot.py script.
 
-**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" provided as an example data, constitutes original single-end transcriptome from broken reads of [*Savalia savaglia*](https://en.wikipedia.org/wiki/Savalia_savaglia), generated in the framework of the DEEPVEN project.
+**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" provided as an example data, constitutes original single-end transcriptome from broken reads of [*Savalia savaglia*](https://en.wikipedia.org/wiki/Savalia_savaglia).
 
 **Parameters**
 
