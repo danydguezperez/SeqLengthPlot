@@ -42,7 +42,7 @@ The script reads sequences from a specified nucleotide or protein FASTA file, wh
 **Parameters**
 
 -	**Define Path**: At **input_fasta = "Assembly_Ss_SE.Trinity.fasta"**, modify the path by replacing the default “**input_fasta**” file with "**your_path_or_your_input_fasta**".
--	**Define the Sequence length**: At **length_threshold = 200**  (default length), set the threshold for your desired length cutoff.
+-	**Define the Sequence length**: At **length_threshold = 200**  (default length: >=200, <200), set the threshold for your desired length cutoff (i.e. will deliver two set of files: >=**length_threshold** and <**length_threshold**). 
 -	**Changing Output Path to home**: Users can comment out the defaults path output_folder = Path(input_fasta).parent / and uncomment (by removing the #) at the line **output_folder = Path.home() / "transcript_length_outputs"** to save the generated output-files in the home directory instead.
 
 <div align="center">
@@ -76,7 +76,7 @@ The script will generate files and plots automatically in a new folder named aft
 
 **Outputs files (using sequence length=200bp by default)**
 
--	Fasta Files: Two fasta files ([**seq_above199bp.fasta**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_above199bp.fasta.zip) and [**seqs_below200bp.fasta**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_below200bp.fasta)), splitted and retrieved from the orginal [input_fasta](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip) file categorizing sequences based on the length threshold.
+-	Fasta Files: Two fasta files: [**seq_above199bp.fasta**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_above199bp.fasta.zip) containing sequences with lengths >= set **length_threshold** (i.e. >=200) and [**seqs_below200bp.fasta**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_below200bp.fasta) with sequences < **sequence length** (i.e. <200 or set **length_threshold**-1), splitted and retrieved from the orginal [input_fasta](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip) file categorizing sequences based on the length threshold.
 
 -	**Histogram Plots**: Four PNG files showing histograms of sequence lengths. Two are in linear scale ([**seq_length_distribution_above199bp.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_above199_log.png) and [**seq_length_distribution_below200bp.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_below200bp.png)), and two are in log scale ([**seq_length_distribution_above199bp_log.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_above199_log.png) and [**seqs_length_distribution_below200bp_log.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_below200_log.png)).
 
