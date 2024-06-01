@@ -81,6 +81,9 @@ The script will generate files and plots automatically in a new folder named aft
 -	**Histogram Plots**: Four PNG files showing histograms of sequence lengths. Two are in linear scale ([**seq_length_distribution_above199bp.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_above199_log.png) and [**seq_length_distribution_below200bp.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_below200bp.png)), and two are in log scale ([**seq_length_distribution_above199bp_log.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_above199_log.png) and [**seqs_length_distribution_below200bp_log.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_below200_log.png)).
 
 -	**Statistical Summary**: A text file ([**seq_length_stats_by_threshold_200.txt**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_stats_by_threshold_200.txt)) containing detailed statistics of the sequence lengths on the [input_fasta](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip): Total number of input Sequences, Number of Sequences above 199 bp and below 200 bp, with the corresponding minimm and maximum lengths.
+
+### Data Availability
+- Additional source and compiled data can be found through Mendeley Data: http://dx.doi.org/10.17632/pmxwfjyyvy.1
   
 ## Remarks
 
