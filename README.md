@@ -92,3 +92,7 @@ The script will generate files and plots automatically in a new folder named aft
 -	**Flexible Threshold Settings**: The tool allows users to set custom length thresholds, crucial for tasks such as validating de novo transcriptome assemblies or analyzing protein-coding regions in ORFs, peptidomics and bioactive peptides biodiscovery which may require different length criteria.
 -	**Ease of Integration**: Designed for flexibility, it can be seamlessly run independently as a standalone script, or incorporated into larger bioinformatics workflows, supporting both interactive explorations and automated pipelines.
 
+### Reference: 
+SeqLengthPlot: An easy-to-use Python-based Tool for Visualizing and Retrieving Sequence Lengths from fasta files with a Tunable Splitting Point
+Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica
+bioRxiv 2024.06.07.597948; doi: [https://doi.org/10.1101/2024.06.07.597948](https://www.biorxiv.org/content/10.1101/2024.06.07.597948v1)
