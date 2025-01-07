@@ -96,3 +96,5 @@ The script will generate files and plots automatically in a new folder named aft
 SeqLengthPlot: An easy-to-use Python-based Tool for Visualizing and Retrieving Sequence Lengths from fasta files with a Tunable Splitting Point
 Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica
 bioRxiv 2024.06.07.597948; doi: [https://doi.org/10.1101/2024.06.07.597948](https://www.biorxiv.org/content/10.1101/2024.06.07.597948v1)
+
+Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica, SeqLengthPlot v2.0: an all-in-one, easy-to-use tool for visualizing and retrieving sequence lengths from FASTA files, Bioinformatics Advances, Volume 5, Issue 1, 2025, vbae183, [https://doi.org/10.1093/bioadv/vbae183](https://doi.org/10.1093/bioadv/vbae183)
