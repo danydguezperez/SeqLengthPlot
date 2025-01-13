@@ -77,6 +77,18 @@
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+Verify the installation: `brew --version`
+
+After running the above commands, check if Homebrew is now accessible. If return this error `command not found: brew`, then you must **Add Homebrew to your PATH** by running these commands in your terminal:
+
+```
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/your_user/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+check again the installation: `brew --version`
+
 - Install Python using Homebrew:
 
 `brew install python`
