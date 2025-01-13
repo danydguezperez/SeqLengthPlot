@@ -33,7 +33,28 @@
 - **Matplotlib**
 - **Biopython**
 
-## How to Run:
+## How to Run (via Git Clone or .zip Download):
+**Option 1**: Clone the repository using Git
+Clone the repository to your local machine:
+
+```
+git clone https://github.com/danydguezperez/SeqLengthPlot.git
+```
+
+Navigate to the directory where SeqLengthPlot_v2.0.2.py is located:
+
+```
+cd SeqLengthPlot
+```
+Run the script with the required input file:
+
+```
+python SeqLengthPlot_v2.0.2.py -i input.fasta
+```
+
+
+**Option 2**: Download and extract the .zip file
+
 1. After downloading it, 
 [SeqLengthPlot_v2.0.2.zip](https://github.com/user-attachments/files/17356697/SeqLengthPlot_v2.0.2.zip)
 
