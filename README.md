@@ -35,19 +35,18 @@
 
 ## How to Run (via Git Clone or .zip Download):
 **Option 1**: Clone the repository using Git
-Clone the repository to your local machine:
 
+1. Clone the repository to your local machine:
 ```
 git clone https://github.com/danydguezperez/SeqLengthPlot.git
 ```
 
-Navigate to the directory where SeqLengthPlot_v2.0.2.py is located:
-
+2. Navigate to the directory where SeqLengthPlot_v2.0.2.py is located:
 ```
 cd SeqLengthPlot
 ```
-Run the script with the required input file:
 
+3. Run the script with the required input file:
 ```
 python SeqLengthPlot_v2.0.2.py -i input.fasta
 ```
@@ -64,7 +63,6 @@ python SeqLengthPlot_v2.0.2.py -i input.fasta
 ```
 
 3. Run the script with the required input file:
-
 ``` 
 python SeqLengthPlot_v2.0.2.py -i input.fasta
 ```
