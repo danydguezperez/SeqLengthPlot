@@ -2,6 +2,10 @@
 
 **SeqLengthPlot** is an all-in-one, easy-to-use Python-based tool for visualizing and retrieving sequence lengths from FASTA files. It splits sequences by length threshold, generates distribution plots, and provides detailed statistics. The new **SeqLengthPlot v2.0.2** (`SeqLengthPlot_v2.0.2.py`) allows users to fully take advantage of its functionalities through simple and customizable command-line flags.
 
+<div align="center">
+<img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/Picture1.jpg width=80%>
+</div>
+
 ## New Features in SeqLengthPlot v2.0.2:
 
 - **Command-line flexibility**: You can now specify input files, output directories, sequence types (nucleotide or protein), and backend plotting options via command-line flags.
