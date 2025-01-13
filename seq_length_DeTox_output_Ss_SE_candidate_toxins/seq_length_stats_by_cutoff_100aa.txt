@@ -1,0 +1,3 @@
+Total number of input Sequences = 4885
+Number of Sequences above 99 aa = 875, Min Length = 100, Max Length = 5152
+Number of Sequences below 100 aa = 4010, Min Length = 33, Max Length = 99
