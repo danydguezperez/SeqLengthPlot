@@ -1,100 +1,121 @@
-# SeqLengthPlot
-An easy-to-use Python-based Tool for Visualizing and Retrieving Sequence Lengths from fasta files with a Tunable Splitting Point
+# SeqLengthPlot v2.0.2: An All-in-One, Easy-to-Use Tool for Visualizing and Retrieving Sequence Lengths from FASTA Files
 
-## Authors
--	Dany Domínguez Pérez (danydguezperez@gmail.com)
--	Maria Vittoria Modica (mariavittoria.modica@szn.it)
+**SeqLengthPlot** is an all-in-one, easy-to-use Python-based tool for visualizing and retrieving sequence lengths from FASTA files. It splits sequences by length threshold, generates distribution plots, and provides detailed statistics. The new **SeqLengthPlot v2.0.2** (`SeqLengthPlot_v2.0.2.py`) allows users to fully take advantage of its functionalities through simple and customizable command-line flags.
 
-## SeqLengthPlot.py
+## New Features in SeqLengthPlot v2.0.2:
 
-<div align="center">
-<img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/fig_1.png width=80%>
-</div>
-
-- **Tool Description**
-SeqLengthPlot.py version 1.0 is a straightforward Python-based script tailored for enhancing sequence length profiling. This script processes sequence data from a FASTA file to categorize and analyze transcript lengths. It generates histograms for transcript lengths above and below a specified threshold, offering both linear and logarithmic views and provides statistical summaries of these distributions. The script also offers the flexibility to display or suppress plot pop-ups, making it suitable for both interactive analysis and automated pipelines.
-
-- **Applications**
-SeqLengthPlot is particularly valuable in scenarios where researchers need to verify the length distribution of assembled transcripts and translated ORFs for subsequent proteomic and peptidomic studies using the sequence length as a reference point, length-based filtering and splitting of a nucelotide or protein FASTA file, as well as the automatically recovering of the sequences contained in the resulting splitted FASTA files.
-
-- **Compatibility**
-This tool is compatible with Unix and Windows Operating System (OS).
-
-## Installation Prerequisites to run SeqLenPlot.py on Windows, Linux, and MacOS
-
-- To run SeqLengthPlot.py, ensure you have an updated version of Python installed: 
-`python 3.x`
-- Additional libraries: matplotlib, Biopython, and Pathlib for plotting and sequence manipulation:
-
-`matplotlib`
-`biopython`
-
-For detailed instructions and tips on installing Python and dependencies in different configurations, refer to [Comprehensive_Installation_Prerequisites_Guide](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Install_Prerequisites_Guide/Comprehensive_Installation_Prerequisites_Guide.md).
-
-- Download the SeqLengthPlot.py script from https://github.com/danydguezperez/SeqLengthPlot and place it in a folder containing your input FASTA file. Open the script with a text editor and set the required parameters:
+- **Command-line flexibility**: You can now specify input files, output directories, sequence types (nucleotide or protein), and backend plotting options via command-line flags.
   
-**Input files**
+- **Default behavior**: The tool defaults to handling nucleotide sequences (`.bp` extension) unless the `--prot` flag is specified for protein sequences. If no input is provided for certain parameters, the tool will use the following defaults:
 
-The script reads sequences from a specified nucleotide or protein FASTA file, which must be present in the directory where the script is run or provided via an absolute path. As an example, we provide an original nucleotide sample: [Assembly_Ss_SE.Trinity.fasta.zip](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip). Download it and decompress it, in the same path of the SeqLengthPlot.py script.
+## Command-line Flag Update in SeqLengthPlot v2.0.2:
+- Changed from `-t` (threshold) to `--cutoff` (current).
 
-**Statement**: The input file "**Assembly_Ss_SE.Trinity.fasta**" provided as an example data, constitutes original single-end transcriptome from broken reads of [*Savalia savaglia*](https://en.wikipedia.org/wiki/Savalia_savaglia).
+### Mandatory Flags:
 
-**Parameters**
+- `-i` (input file): The path to the input FASTA file (this is required).
 
--	**Define Path**: At **input_fasta = "Assembly_Ss_SE.Trinity.fasta"**, modify the path by replacing the default “**input_fasta**” file with "**your_path_or_your_input_fasta**".
--	**Define the Sequence length**: At **length_threshold = 200**  (default length: >=200, <200), set the threshold for your desired length cutoff (i.e. will deliver two set of files: >=**length_threshold** and <**length_threshold**). 
--	**Changing Output Path to home**: Users can comment out the defaults path output_folder = Path(input_fasta).parent / and uncomment (by removing the #) at the line **output_folder = Path.home() / "transcript_length_outputs"** to save the generated output-files in the home directory instead.
+### Optional Flags:
 
-<div align="center">
-<img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/parameters_1.png width=80%>
-</div>
+- `-o` (output directory): If not provided, a folder is automatically generated in the input file’s directory based on the input FASTA file's name, sequence type, and threshold.
+- `--cutoff` (cutoff): The default sequence length cutoff is 200. You can adjust this with the `--cutoff` flag.
+- `--nt`: Specifies nucleotide sequences (default behavior).
+- `--prot`: Specifies protein sequences (changes file extensions to `.aa`).
+- `--showplot`: If this flag is used, plots will be displayed interactively. Otherwise, they are saved but not shown.
+- `--backend`: Specify the plotting backend for matplotlib (`TkAgg` for Linux/Windows or `MacOSX` for macOS). The default is `TkAgg`.
 
--	**Interactive Plots**: Users can explore interactively the generated plots and save them into differents image formats
+## Dependencies:
+- **Python 3.x**
+- **Matplotlib**
+- **Biopython**
 
-<div align="center"> 
-<img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/fig_2.png width=80%>
-</div>
+## How to Run:
+1. After downloading it, 
+[SeqLengthPlot_v2.0.2.zip](https://github.com/user-attachments/files/17356697/SeqLengthPlot_v2.0.2.zip)
 
--	 **Pipeline integration**: Or instead, comment out the **plt.show()** line to prevent plots from popping up. This is especially useful when integrating the script into automated data processing pipelines where no user interaction is desired. Plots will be saved anyway in the selected output directory.
+2. Navigate to the directory where `SeqLengthPlot_v2.0.2.py` is located:
+```
+   cd /path/to/SeqLengthPlot_v2.0.2.py
+```
 
-<div align="center">
-<img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/parameters_2.png width=70%>
-</div>
+3. Run the script with the required input file:
 
-## Running the script
+``` 
+python SeqLengthPlot_v2.0.2.py -i input.fasta
+```
 
-Navigate to the folder containing **SeqLengthPlot.py** in the terminal or Command Prompt using the **cd** command. 
-Then, execute the script in Unix systems by typing:
+>The `-i` flag and the corresponding input.fasta is the only mandatory parameter. If it's not provided, the script will return the following error message:
 
-`python3 SeqLengthPlot.py`
+```
+usage: SeqLengthPlot_v2.0.2py [-h] -i INPUT [-o OUTPUT] --cutoff CUTOFF] [--nt] [--prot] [--showplot] [--backend BACKEND]
+SeqLengthPlot_v2.0.2.py: error: the following arguments are required: -i/--input
+```
 
-and in Windows:
+## For Help or Command-Line Flags Information:
+To get more information on available flags and options, use the `-h` flag:
 
-`.\SeqLengthPlot.py`
+  ```
+python SeqLengthPlot_v2.0.2.py -h
+```
 
-The script will generate files and plots automatically in a new folder named after your **input.fasta** file. If you encounter a "Warning: The system version of Tk is deprecated" message while plotting on MacOS, edit the script to switch the default backend from **matplotlib.use('TkAgg')** to **'MacOSX'** for interactive plots.
+This will display the following help message:
 
-**Outputs files (using sequence length=200bp by default)**
+``` 
+usage: SeqLengthPlot_v2.0.2.py [-h] -i INPUT [-o OUTPUT] [--cutoff CUTOFF] [--nt] [--prot] [--showplot] [--backend BACKEND]
 
--	Fasta Files: Two fasta files: [**seq_above199bp.fasta**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_above199bp.fasta.zip) containing sequences with lengths >= set **length_threshold** (i.e. >=200) and [**seqs_below200bp.fasta**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_below200bp.fasta) with sequences < **sequence length** (i.e. <200 or set **length_threshold**-1), splitted and retrieved from the orginal [input_fasta](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip) file categorizing sequences based on the length threshold.
+SeqLengthPlot: Tool for sequence length analysis and visualization.
 
--	**Histogram Plots**: Four PNG files showing histograms of sequence lengths. Two are in linear scale ([**seq_length_distribution_above199bp.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_above199_log.png) and [**seq_length_distribution_below200bp.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_below200bp.png)), and two are in log scale ([**seq_length_distribution_above199bp_log.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_above199_log.png) and [**seqs_length_distribution_below200bp_log.png**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_distribution_below200_log.png)).
+options:
+  -h, --help            show this help message and exit
+  -i INPUT, --input INPUT
+                        Path to the input FASTA file.
+  -o OUTPUT, --output OUTPUT
+                        Directory for output files. Defaults to input file's directory.
+  --cutoff CUTOFF       Length cutoff to split sequences. Default is 200.
+  --nt                  Specify if the input file contains nucleotide sequences (default).
+  --prot                Specify if the input file contains protein sequences.
+  --showplot            Display plots interactively (default is disabled).
+  --backend BACKEND     Set the backend for plotting (default is TkAgg, use 'MacOSX' for Mac users).
+```
 
--	**Statistical Summary**: A text file ([**seq_length_stats_by_threshold_200.txt**](https://github.com/danydguezperez/SeqLengthPlot/blob/main/seq_length_Assembly_Ss_SE.Trinity/seq_length_stats_by_threshold_200.txt)) containing detailed statistics of the sequence lengths on the [input_fasta](https://github.com/danydguezperez/SeqLengthPlot/blob/main/Assembly_Ss_SE.Trinity.fasta.zip): Total number of input Sequences, Number of Sequences above 199 bp and below 200 bp, with the corresponding minimm and maximum lengths.
+## Example of full command line, including various options you might use when running **SeqLengthPlot v2.0.2**:
 
-### Data Availability
-- Additional source and compiled data can be found through Mendeley Data: http://dx.doi.org/10.17632/pmxwfjyyvy.1
-  
-## Remarks
+```
+python SeqLengthPlot_v2.0.2.py -i DeTox_output_Ss_SE_candidate_toxins.fasta -o /path/to/output_directory --cutoff 100 --prot --showplot --backend MacOSX 
+```
 
--	**Comprehensive Metrics and Output**: Unlike seqkit stats, or TrinityStats.pl, SeqLengthPlot offers in a single tool the total number of sequences, minimum, maximum, of the input and splitted files, as well as the resulting FASTA files, containing the corresponding sequences length below and above the cuttoff.
--	**Visual Analysis**: It generates intuitive plots for sequence length distributions, offering both linear and logarithmic views to accommodate a wide range of sequence lengths, enhancing data interpretation. 
--	**Flexible Threshold Settings**: The tool allows users to set custom length thresholds, crucial for tasks such as validating de novo transcriptome assemblies or analyzing protein-coding regions in ORFs, peptidomics and bioactive peptides biodiscovery which may require different length criteria.
--	**Ease of Integration**: Designed for flexibility, it can be seamlessly run independently as a standalone script, or incorporated into larger bioinformatics workflows, supporting both interactive explorations and automated pipelines.
+### Explanation:
 
-### Reference: 
-SeqLengthPlot: An easy-to-use Python-based Tool for Visualizing and Retrieving Sequence Lengths from fasta files with a Tunable Splitting Point
-Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica
-bioRxiv 2024.06.07.597948; doi: [https://doi.org/10.1101/2024.06.07.597948](https://www.biorxiv.org/content/10.1101/2024.06.07.597948v1)
+- **`-i` input.fasta**: Specifies the input FASTA file (mandatory parameter).
+- **`-o` /path/to/output_directory**: Specifies the directory where output files (FASTA, plots, stats) will be saved. If omitted, the files will be saved in the input file's directory.
+- **`--cutoff 100`**: Sets the cutoff for sequence length. Sequences will be split based on a length of `100 aa` (amino acids), instead of `200 bp` (base pairs) for nucleotide sequences (default cutoff), since `--prot` is specified in the command line for protein sequences in the input FASTA file.
+- **`--prot`**: Specifies that the input file contains **protein sequences**. When this flag is used, output files, plots, legends, and stats will be generated with `.aa` (amino acids) as the unit. If omitted, the default is nucleotide sequences (`--nt`), and the output will use `.bp` (base pairs).
+- **``--showplot`**: Displays the plots interactively. If this flag is not included, the plots will be saved but not shown.
+- **`--backend MacOSX`**: Specifies the backend for plotting. Use `MacOSX` for macOS users, instead of default `TkAgg`, for Linux/Windows.
+
+### Files Generated:
+
+1.	**FASTA Files:**
+-	**seq_above99aa.fasta**: Contains sequences with a length greater than or equal to 100 amino acids.
+-	**seq_below100aa.fasta**: Contains sequences with a length less than 100 amino acids.
+2.	**Distribution Plots:**
+-	**seq_length_distribution_above99aa.png**: A histogram plot showing the distribution of sequence lengths greater than or equal to 100 amino acids.
+-	**seq_length_distribution_below100aa.png**: A histogram plot showing the distribution of sequence lengths less than 100 amino acids.
+-	**seq_length_distribution_above99aa_log.png**: A log-scale plot showing the distribution of sequence lengths greater than or equal to 100 amino acids.
+-	**seq_length_distribution_below100aa_log.png**: A log-scale plot showing the distribution of sequence lengths less than 100 amino acids.
+3.	**Statistics File:**
+-	**seq_length_stats_by_threshold_100aa.txt**: A text file containing statistics about the sequences, including the total number of sequences, and minimum and maximum sequence lengths for those above and below the threshold.
+
+> Please find enclosed the plots and output files generated as Example_SeqLengthPlot_v2.0.2.zip.
+[Example_SeqLengthPlot_v2.0.2.zip](https://github.com/user-attachments/files/17356731/Example_SeqLengthPlot_v2.0.2.zip)
+
+## Key Improvements:
+
+- The introduction of **user-friendly and accessible command-line flags** allows for seamless customization of parameters for specific sequence manipulation tasks—eliminating the need for users to manually modify the code.
+- The term `--cutoff` has replaced `-t` (threshold) for a more intuitive and proper description of the sequence length splitting process.
+- Improved clarity and organization, particularly in the distinction between **mandatory** and **optional** flags, making the tool easier to navigate.
+- The **help section** has been restructured for better readability and ease of understanding, providing users with clear guidance on available options.
+
+### Please Cite as: 
 
 Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica, SeqLengthPlot v2.0: an all-in-one, easy-to-use tool for visualizing and retrieving sequence lengths from FASTA files, Bioinformatics Advances, Volume 5, Issue 1, 2025, vbae183, [https://doi.org/10.1093/bioadv/vbae183](https://doi.org/10.1093/bioadv/vbae183)
