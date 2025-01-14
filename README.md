@@ -127,7 +127,7 @@ python SeqLengthPlot_v2.0.2.py -i DeTox_output_Ss_SE_candidate_toxins.fasta -o /
 -	**seq_length_distribution_above99aa_log.png**: A log-scale plot showing the distribution of sequence lengths greater than or equal to 100 amino acids.
 -	**seq_length_distribution_below100aa_log.png**: A log-scale plot showing the distribution of sequence lengths less than 100 amino acids.
 3.	**Statistics File:**
--	**seq_length_stats_by_threshold_100aa.txt**: A text file containing statistics about the sequences, including the total number of sequences, and minimum and maximum sequence lengths for those above and below the threshold.
+-	**seq_length_stats_by_cutoff_100aa.txt**: A text file containing statistics about the sequences, including the total number of sequences, and minimum and maximum sequence lengths for those above and below the threshold.
 
 > Please find enclosed the plots and output files generated as Example_SeqLengthPlot_v2.0.2.zip.
 [Example_SeqLengthPlot_v2.0.2.zip](https://github.com/user-attachments/files/17356731/Example_SeqLengthPlot_v2.0.2.zip)
