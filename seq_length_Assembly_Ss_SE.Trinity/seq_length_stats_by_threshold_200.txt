@@ -1,3 +1,0 @@
-Total number of input Sequences = 77081
-Number of Sequences above 199 bp = 77072, Min Length = 200, Max Length = 25891
-Number of Sequences below 200 bp = 9, Min Length = 190, Max Length = 199
