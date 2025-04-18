@@ -142,3 +142,5 @@ python SeqLengthPlot_v2.0.2.py -i DeTox_output_Ss_SE_candidate_toxins.fasta -o /
 ### Please Cite as: 
 
 Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica, SeqLengthPlot v2.0: an all-in-one, easy-to-use tool for visualizing and retrieving sequence lengths from FASTA files, Bioinformatics Advances, Volume 5, Issue 1, 2025, vbae183, [https://doi.org/10.1093/bioadv/vbae183](https://doi.org/10.1093/bioadv/vbae183)
+
+💬 Contact: [LinkedIn](https://www.linkedin.com/in/dany-dominguez-perez/) or [X (Twitter)](https://x.com/danydguezperez)
