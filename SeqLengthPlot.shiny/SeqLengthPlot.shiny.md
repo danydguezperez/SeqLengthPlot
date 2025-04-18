@@ -3,6 +3,9 @@
 This folder contains the **interactive R Shiny implementation** of [SeqLengthPlot v2.0](https://doi.org/10.1093/bioadv/vbae183), a tool originally developed as a Python CLI for FASTA sequence analysis and visualization.
 
 > ✅ This version replicates the Python tool's features with an intuitive graphical interface, making it accessible for users with little or no coding experience.
+> 
+🌐 Running Online (ShinyApps.io) 
+You can also explore the app hosted online 👉 [https://danysaurio.shinyapps.io/seqlengthplot/](https://danysaurio.shinyapps.io/seqlengthplot/)
 
 ---
 
@@ -31,28 +34,27 @@ To launch the app locally from R or RStudio:
 
 1. Clone or download the repository:
 
-```bash
+```
 git clone https://github.com/danydguezperez/SeqLengthPlot.git
+```
 
 Open R or RStudio and set the working directory to the SeqLengthPlot.shiny/ folder.
 
-Run the app using:
+- Run the app using:
 
+```
 shiny::runApp("SeqLengthPlot.shiny")
+```
 
 💡 The example FASTA file DeTox_output_Ss_SE_candidate_toxins.fasta is included for demo purposes.
-
-🌐 Running Online (ShinyApps.io)
-You can also explore the app hosted online:
-
-👉 https://danysaurio.shinyapps.io/seqlengthplot/
 
 📎 Notes
 The Shiny app is equivalent in logic and output to the Python CLI version.
 
-It is especially useful for educational or demo use cases where interactivity is desired.
 
-Processing large FASTA files may be better suited for the command-line tool.
+>It is especially useful for educational or demo use cases where interactivity is desired.
+
+>Processing large FASTA files may be better suited for the command-line tool.
 
 🔗 Related Resources
 🐍 Python CLI version: github.com/danydguezperez/SeqLengthPlot
