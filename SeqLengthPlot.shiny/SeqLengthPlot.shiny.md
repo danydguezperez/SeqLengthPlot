@@ -7,6 +7,11 @@ This folder [SeqLengthPlot.shiny](https://github.com/danydguezperez/SeqLengthPlo
 🌐 Running Online (ShinyApps.io) 
 You can also explore the **You can also explore the interactive R Shiny implementation app hosted online** 👉 [https://danysaurio.shinyapps.io/seqlengthplot/](https://danysaurio.shinyapps.io/seqlengthplot/)
 
+
+<div align="center">
+<img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/SeqLengthPlot-shiny.png width=40%>
+</div>
+
 ---
 
 ## 🔍 Overview
