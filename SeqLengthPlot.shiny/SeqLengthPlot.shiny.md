@@ -1,11 +1,11 @@
 # 📊 SeqLengthPlot v2.0 — Shiny App (R Version)
 
-This folder contains the **interactive R Shiny implementation** of [SeqLengthPlot v2.0](https://doi.org/10.1093/bioadv/vbae183), a tool originally developed as a Python CLI for FASTA sequence analysis and visualization.
+This folder [SeqLengthPlot.shiny](https://github.com/danydguezperez/SeqLengthPlot/tree/main/SeqLengthPlot.shiny) contains the **Contains the R Shiny code for the interactive version of** [SeqLengthPlot v2.0](https://doi.org/10.1093/bioadv/vbae183), a tool originally developed as a Python CLI for FASTA sequence analysis and visualization.
 
 > ✅ This version replicates the Python tool's features with an intuitive graphical interface, making it accessible for users with little or no coding experience.
 > 
 🌐 Running Online (ShinyApps.io) 
-You can also explore the app hosted online 👉 [https://danysaurio.shinyapps.io/seqlengthplot/](https://danysaurio.shinyapps.io/seqlengthplot/)
+You can also explore the **You can also explore the interactive R Shiny implementation app hosted online** 👉 [https://danysaurio.shinyapps.io/seqlengthplot/](https://danysaurio.shinyapps.io/seqlengthplot/)
 
 ---
 
