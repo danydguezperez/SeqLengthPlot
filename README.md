@@ -2,6 +2,11 @@
 
 **SeqLengthPlot** is an all-in-one, easy-to-use Python-based tool for visualizing and retrieving sequence lengths from FASTA files. It splits sequences by length threshold, generates distribution plots, and provides detailed statistics. The new **SeqLengthPlot v2.0.2** (`SeqLengthPlot_v2.0.2.py`) allows users to fully take advantage of its functionalities through simple and customizable command-line flags.
 
+🧪 An intuitive and user-friendly **R Shiny application** is also available for exploring and analyzing sequence lengths directly in your browser.  
+🌐 Access it here: https://danysaurio.shinyapps.io/seqlengthplot/  
+📂 The R code for the Shiny app is included inside the [`SeqLengthPlot.shiny`](SeqLengthPlot.shiny/) folder of this repository.
+
+
 <div align="center">
 <img src=https://github.com/danydguezperez/SeqLengthPlot/blob/main/figures/Picture1.png width=40%>
 </div>
