@@ -16,6 +16,9 @@ library(ggplot2)
 library(rmarkdown)
 library(tools)
 
+# 🔧 Increase max file upload size to 500 MB
+options(shiny.maxRequestSize = 500 * 1024^2)
+
 # -------------------------
 # USER INTERFACE (UI)
 # -------------------------
@@ -41,11 +44,17 @@ ui <- fluidPage(
       br(),
       
       downloadButton("downloadExample", "Download Example FASTA"),
+      br(),
       helpText("📥 Download a sample FASTA file to test the app."),
+      br(),
       downloadButton("downloadStats", "Download Stats (.txt)"),
+      br(),
       downloadButton("downloadAbove", "Download >= Cutoff FASTA"),
+      br(),
       downloadButton("downloadBelow", "Download < Cutoff FASTA"),
+      br(),
       downloadButton("downloadPlot", "Download Current Plot (.png)"),
+      br(),
       downloadButton("downloadPlotSet", "Download Split Plot Set (.zip)")
     ),
     
@@ -57,7 +66,8 @@ ui <- fluidPage(
       br(),
       helpText("🛠 Trouble uploading your FASTA file? If your file is very large, or you experience long processing times due to internet speed, you might prefer using the Python or R version of this app locally."),
       helpText("📦 Please check the code for the Python CLI or the R Shiny version on GitHub: https://github.com/danydguezperez/SeqLengthPlot"),
-      helpText("💬 Contact: [LinkedIn](https://www.linkedin.com/in/dany-dominguez-perez/) or [X (Twitter)](https://x.com/danydguezperez)")
+      helpText("💬 Contact: [LinkedIn](https://www.linkedin.com/in/dany-dominguez-perez/) or [X (Twitter)](https://x.com/danydguezperez)"),
+      helpText("Please Cite as: Dany Domínguez-Pérez, Guillermin Agüero-Chapin, Serena Leone, Maria Vittoria Modica, SeqLengthPlot v2.0: an all-in-one, easy-to-use tool for visualizing and retrieving sequence lengths from FASTA files, Bioinformatics Advances, Volume 5, Issue 1, 2025, vbae183, https://doi.org/10.1093/bioadv/vbae183")
     )
   )
 )
@@ -66,7 +76,6 @@ ui <- fluidPage(
 # SERVER LOGIC
 # -------------------------
 server <- function(input, output, session) {
-  # Allow download of example FASTA file
   output$downloadExample <- downloadHandler(
     filename = function() {
       "DeTox_output_Ss_SE_candidate_toxins.fasta"
@@ -76,7 +85,6 @@ server <- function(input, output, session) {
     }
   )
   
-  # Parse uploaded FASTA file
   fasta_data <- eventReactive(input$analyze, {
     req(input$fasta_file)
     seq_type <- if (input$seqtype == "Protein") "AA" else "DNA"
@@ -85,27 +93,20 @@ server <- function(input, output, session) {
     list(lengths = lengths, sequences = seqs, seq_type = input$seqtype)
   })
   
-  # Determine unit label (aa or nt)
   unit_label <- reactive({ if (input$seqtype == "Protein") "aa" else "nt" })
   
-  # Build main histogram
   plot_obj <- reactive({
     dat <- fasta_data()
     df <- data.frame(Length = dat$lengths)
-    label_cut <- if (input$logscale) "Log-Scale Distribution" else "Seq Length Distribution"
-    label_range <- if (input$cutoff > 0) {
-      if (input$logscale) paste("Above", input$cutoff - 1, unit_label())
-      else paste("Below", input$cutoff, unit_label())
-    } else {
-      paste0("(", unit_label(), ")")
-    }
+    label <- paste(ifelse(input$logscale, "Log-Scale Distribution", "Seq Length Distribution"),
+                   "Cutoff", input$cutoff, unit_label())
     
     p <- ggplot(df, aes(x = Length)) +
       geom_histogram(bins = 50, fill = input$plotColor, color = "black", alpha = 0.7) +
       labs(
         x = "Sequence Length",
         y = ifelse(input$logscale, "Log Frequency", "Frequency"),
-        title = paste(label_cut, label_range)
+        title = label
       ) +
       theme_minimal() +
       theme(plot.title = element_text(hjust = 0.5))
@@ -119,9 +120,10 @@ server <- function(input, output, session) {
     p
   })
   
-  output$lengthPlot <- renderPlot({ plot_obj() })
+  output$lengthPlot <- renderPlot({ req(fasta_data()); plot_obj() })
   
   output$summaryStats <- renderPrint({
+    req(fasta_data())
     dat <- fasta_data()
     lengths <- dat$lengths
     cutoff <- input$cutoff
@@ -137,6 +139,7 @@ server <- function(input, output, session) {
       paste0("seq_length_stats_by_cutoff_", input$cutoff, ".txt")
     },
     content = function(file) {
+      req(fasta_data())
       dat <- fasta_data()
       lengths <- dat$lengths
       cutoff <- input$cutoff
@@ -155,6 +158,7 @@ server <- function(input, output, session) {
       paste0("seq_above", input$cutoff - 1, ".fasta")
     },
     content = function(file) {
+      req(fasta_data())
       dat <- fasta_data()
       above <- dat$sequences[which(dat$lengths >= input$cutoff)]
       write.fasta(sequences = above, names = names(above), file.out = file)
@@ -166,6 +170,7 @@ server <- function(input, output, session) {
       paste0("seq_below", input$cutoff, ".fasta")
     },
     content = function(file) {
+      req(fasta_data())
       dat <- fasta_data()
       below <- dat$sequences[which(dat$lengths < input$cutoff)]
       write.fasta(sequences = below, names = names(below), file.out = file)
@@ -177,6 +182,7 @@ server <- function(input, output, session) {
       paste0("seq_length_distribution_cutoff_", input$cutoff, ifelse(input$logscale, "_log", ""), ".png")
     },
     content = function(file) {
+      req(fasta_data())
       ggsave(file, plot = plot_obj(), width = 8, height = 5)
     }
   )
@@ -186,6 +192,7 @@ server <- function(input, output, session) {
       paste0("seq_length_distribution_cutoff_", input$cutoff, "_plots.zip")
     },
     content = function(file) {
+      req(fasta_data())
       dat <- fasta_data()
       cutoff <- input$cutoff
       above <- dat$lengths[dat$lengths >= cutoff]
